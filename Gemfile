@@ -1,0 +1,17 @@
+source 'https://rubygems.org'
+
+gem 'rails', '~> 4.2.6'
+
+# Use Uglifier as compressor for JavaScript assets
+gem 'uglifier', '>= 1.3.0'
+
+# Use jquery as the JavaScript library
+gem 'jquery-rails'
+
+group :development, :test do
+  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'byebug'
+  gem 'sqlite3'
+end
+
+
