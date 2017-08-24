@@ -2,6 +2,9 @@ source 'https://rubygems.org'
 
 gem 'rails', '~> 4.2.6'
 
+# гем, для аутентификации пользователя
+gem 'devise'
+
 # гем, интегрирующий bootstrap
 gem 'twitter-bootstrap-rails'
 
