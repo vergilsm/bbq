@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
 
   # задаем юзеру случайное имя, если оно пустое
   def set_name
-    self.name = "Кто-то №#{rand(777)}" if self.name.blank?
+    self.name = I18n.t('activerecord.models.user') if self.name.blank?
   end
 
 end

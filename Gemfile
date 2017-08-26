@@ -4,6 +4,9 @@ gem 'rails', '~> 4.2.6'
 
 # гем, для аутентификации пользователя
 gem 'devise'
+# гемы для русификации текстов
+gem 'devise-i18n'
+gem 'russian'
 
 # гем, интегрирующий bootstrap
 gem 'twitter-bootstrap-rails'
