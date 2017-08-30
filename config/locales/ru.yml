@@ -14,6 +14,7 @@ ru:
         address:     'Адрес события'
         datetime:    'Дата и время'
         description: 'Описание'
+
   controllers:
     events:
       created:   'Событие создано!'
@@ -21,9 +22,19 @@ ru:
       destroyed: 'Событие удалено.'
     users:
       updated: 'Вы обновили профиль!'
+    comments:
+      destroyed: 'Комментарий удален'
+      created:   'Комментарий добавлен'
+      error:     'Ошибка с комментарием'
+
   app:
     name:    'Шашлыки'
     company: 'Dmitrij'
+
+  comments:
+    comment:
+      destroy_confirm: 'Вы точно хотите удалить комментарий?'
+
   errors:
     zero:  "%{count} ошибок"
     one:   "%{count} ошибка"
