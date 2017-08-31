@@ -7,9 +7,11 @@ class CommentsController < ApplicationController
     @new_comment = @event.comments.build(comment_params)
     @new_comment.user = current_user
 
-    if @comment.save
+    if @new_comment.save
+      # если сохранился успешно, редирект на страницу самого события
       redirect_to @event, notice: I18n.t('controllers.comments.created')
     else
+      # если ошибки — рендерим здесь же шаблон события
       render 'events/show', alert: I18n.t('controllers.comments.error')
     end
   end
@@ -29,7 +31,7 @@ class CommentsController < ApplicationController
 
   private
     def set_event
-      @event = Event.find(params[:id])
+      @event = Event.find(params[:event_id])
     end
 
     # Use callbacks to share common setup or constraints between actions.

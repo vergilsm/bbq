@@ -12,11 +12,15 @@ class User < ActiveRecord::Base
   # перед валидацией задать новое имя :set_name только при создании
   before_validation :set_name, on: :create
 
-  private
+  after_commit :link_subscriptions, on: :create
 
+  private
   # задаем юзеру случайное имя, если оно пустое
   def set_name
     self.name = I18n.t('activerecord.models.user') if self.name.blank?
   end
 
+  def link_subscriptions
+    Subscription.where(user_id: nil, user_email: self.email).update_all(user_id: self.id)
+  end
 end
