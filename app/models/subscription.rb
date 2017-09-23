@@ -14,6 +14,9 @@ class Subscription < ActiveRecord::Base
   # для данного event_id один email может использоваться только один раз (если нет юзера, анонимная подписка)
   validates :user_email, uniqueness: {scope: :event_id}, unless: 'user.present?'
 
+  # валидировать своим методом
+  validates :check_self_subscription, presence: true
+
   # переопределяем метод, если есть юзер, выдаем его имя,
   # если нет -- дергаем исходный переопределенный метод
   def user_name
@@ -32,5 +35,11 @@ class Subscription < ActiveRecord::Base
     else
       super
     end
+  end
+
+  # если у юзера есть событие
+  def check_self_subscription
+    errors.add(:user, :invalid) if
+      event.subscriptions.map(&:user_id).include?(event.user)
   end
 end
