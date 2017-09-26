@@ -16,6 +16,7 @@ class Subscription < ActiveRecord::Base
 
   # валидировать своим методом
   validate :check_self_subscription
+  validate :check_the_email_exists, unless: 'user.present?'
 
   # переопределяем метод, если есть юзер, выдаем его имя,
   # если нет -- дергаем исходный переопределенный метод
@@ -41,5 +42,10 @@ class Subscription < ActiveRecord::Base
   def check_self_subscription
     errors.add(:user, :invalid) if
       event.subscriptions.map(&:user_id).include?(event.user_id)
+  end
+
+  # если есть юзер с валидным email,то его email для подписки использовать нельзя
+  def check_the_email_exists
+    errors.add(:user_email, :taken) if User.exists?(email: user_email)
   end
 end
