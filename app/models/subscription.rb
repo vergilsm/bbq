@@ -40,8 +40,7 @@ class Subscription < ActiveRecord::Base
 
   # если у юзера есть событие
   def check_self_subscription
-    errors.add(:user, :invalid) if
-      event.subscriptions.map(&:user_id).include?(event.user_id)
+    errors.add(:user, :invalid) if user == event.user
   end
 
   # если есть юзер с валидным email,то его email для подписки использовать нельзя
