@@ -1,8 +1,11 @@
 ru:
   activerecord:
     models:
-      user:  'Пользователь'
-      event: 'Событие'
+      user:         'Пользователь'
+      event:        'Событие'
+      subscription: 'Подписка'
+      comment:      'Комментарий'
+      photo:        'Фотография'
     attributes:
       user:
         email:                 'Email'
@@ -15,6 +18,14 @@ ru:
         address:     'Адрес события'
         datetime:    'Дата и время'
         description: 'Описание'
+      comment:
+        user_name: 'Ваше имя'
+        body: 'Комментарий'
+      subscription:
+        user_name: 'ваше имя'
+        user_email: 'Ваш email'
+      photo:
+        photo: 'Фотография'
 
   controllers:
     events:
