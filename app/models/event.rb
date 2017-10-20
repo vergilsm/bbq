@@ -4,9 +4,9 @@ class Event < ActiveRecord::Base
 
   has_many :comments
   has_many :subscriptions
-
   # у события много подписчиков (объекты User), через таблицу subscriptions, по ключу user_id
   has_many :subscribers, through: :subscriptions, source: :user
+  has_many :photos
 
   validates :user,     presence: true
 
@@ -14,4 +14,10 @@ class Event < ActiveRecord::Base
 
   validates :address,  presence: true
   validates :datetime, presence: true
+
+  # Метод, который возвращает всех, кто пойдет на событие:
+  # всех подписавшихся и организатора
+  def visitors
+    (subscribers + [user]).uniq
+  end
 end
