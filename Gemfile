@@ -18,7 +18,7 @@ gem 'uglifier', '>= 1.3.0'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
-gem 'carrierwave'
+gem 'carrierwave', '~> 0.11.2'
 gem 'rmagick'
 gem 'fog-aws'
 
