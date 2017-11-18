@@ -20,9 +20,9 @@ ru:
         description: 'Описание'
       comment:
         user_name: 'Ваше имя'
-        body: 'Комментарий'
+        body:      'Комментарий'
       subscription:
-        user_name: 'ваше имя'
+        user_name:  'ваше имя'
         user_email: 'Ваш email'
       photo:
         photo: 'Фотография'
@@ -61,19 +61,26 @@ ru:
 
   event_mailer:
     comment:
-      title: 'Новый комментарий'
-      author: 'Автор'
-      event: 'Событие'
+      title:    'Новый комментарий'
+      author:   'Автор'
+      event:    'Событие'
       datetime: 'Состоится'
-      owner: 'Организатор'
+      owner:    'Организатор'
+    photo:
+      title:    'Новая фотография'
+      photo:    'Добавлено новое фото'
+      author:   'Автор'
+      event:    'Событие'
+      datetime: 'Состоится'
+      owner:    'Организатор'
     subscription:
-      title: 'Новая подписка'
-      name: 'Имя'
-      email: 'Email'
-      author: 'Автор'
-      event: 'Событие'
+      title:    'Новая подписка'
+      name:     'Имя'
+      email:    'Email'
+      author:   'Автор'
+      event:    'Событие'
       datetime: 'Состоится'
-      owner: 'Организатор'
+      owner:    'Организатор'
 
   errors:
     zero:  "%{count} ошибок"
