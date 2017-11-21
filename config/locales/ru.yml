@@ -47,6 +47,12 @@ ru:
       created:   'Вы добавили фотографию к событию'
       destroyed: 'Вы удалили фотку'
 
+  mailers:
+    event:
+      new_subscription: 'Новая подписка на'
+      new_comment:      'Новый комментарий @'
+      new_photo:        'Новая фотография @'
+
   app:
     name:    'Шашлыки'
     company: 'Dmitrij'
@@ -54,6 +60,10 @@ ru:
   comments:
     comment:
       destroy_confirm: 'Вы точно хотите удалить комментарий?'
+
+  photos:
+    photo:
+      destroy_confirm: 'Вы точно хотите удалить фотографию?'
 
   subscriptions:
     subscription:
