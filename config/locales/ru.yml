@@ -18,6 +18,7 @@ ru:
         address:     'Адрес события'
         datetime:    'Дата и время'
         description: 'Описание'
+        pincode:     'Пинкод доступа'
       comment:
         user_name: 'Ваше имя'
         body:      'Комментарий'
@@ -29,9 +30,10 @@ ru:
 
   controllers:
     events:
-      created:   'Событие создано!'
-      updated:   'Событие обновлено!'
-      destroyed: 'Событие удалено.'
+      created:       'Событие создано!'
+      updated:       'Событие обновлено!'
+      destroyed:     'Событие удалено.'
+      wrong_pincode: 'Неверный пинкод!'
     users:
       updated: 'Вы обновили профиль!'
     comments:
