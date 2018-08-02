@@ -1,28 +1,33 @@
-== README
+== Приложение "Шашлыки"
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[Рабочее приложение](https://mybbq.herokuapp.com/)
 
-Things you may want to cover:
+Реализация на Runy on Rails <tt>version-4.2.6</tt>
 
-* Ruby version
+**Описание**
 
-* System dependencies
+Приложение предназначено для планирования совместных мероприятий. После регистрации пользователь может добавить мероприятие, в котором могут принять участие другие пользователи.
 
-* Configuration
+**Установка и запуск**
 
-* Database creation
+Перед запуском приложения необходимо выполнить установку всех необходимых гемов и подготовку базы данных. Для этого в консоли в директории с приложением необходимо выполнить команды:
 
-* Database initialization
+```
+bundle install
+bundle exec rake db:migrate
+```
 
-* How to run the test suite
+А так же необходимо установить переменные окружения для работы:
 
-* Services (job queues, cache servers, search engines, etc.)
+* SendGrid
 
-* Deployment instructions
+```
+SENDGRID_USERNAME
+SENDGRID_PASSWORD
+```
 
-* ...
+Для запуска локального сервера необходимо выполнить команду:
 
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+```
+bundle exec rails s
+```
